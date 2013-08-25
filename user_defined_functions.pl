@@ -6,6 +6,7 @@
 :- op(900, xfy, <-).
 
 % examples of self defined 'functions'
+% note that self defined functions should use cut.
 R <- log2(X) :- R <- log(X) / log(2), !.
 R <- len(L) :- length(L, R), !.
 Sum <- sum_list([], _) :- Sum <- 0.
