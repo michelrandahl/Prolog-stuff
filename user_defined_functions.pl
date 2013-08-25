@@ -13,7 +13,12 @@
 R <- log2(X) :- R <- log(X) / log(2), !.
 R <- len(L) :- length(L, R), !.
 Sum <- sum_list([], _) :- Sum <- 0.
-Sum <- sum_list([H|T], Func) :- New_sum <- sum_list(T, Func), !, Apply_func =..[Func,H], Sum <- New_sum + Apply_func.
+Sum <- sum_list([H|T], Func) :-
+     New_sum <- sum_list(T, Func),
+     !, Func =..Func_list,
+     append(Func_list,[H],Apply_func_list),
+     Apply_func =..Apply_func_list,
+     Sum <- New_sum + Apply_func.
 
 % folowing two predicates solves the problem of using self defined functions in combination with mathematical operators
 % note that they should always come after the user defined 'functions'
