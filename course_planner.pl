@@ -46,7 +46,6 @@ get_courses_condition(Course, Slots, CourseConstraints, PreviousCourses) :-
 % ECTS: current ects sum
 % FilledSlots: current filled time slots
 % ECTSSum: final ects sum for selected courses
-% FilledSlotsRes: final list of filled time slots
 % List: input list of courses to create subset of
 % SubsetList: resulting subset of the input list of courses with its selected timeslot, -satisfying all the constraints
 % CourseSubsetList: same as SubsetList, but without timeslots
